@@ -9,6 +9,7 @@ import { MongooseModule } from '@nestjs/mongoose';
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
+      envFilePath: '../../.env',
       validate,
     }),
     MailerModule.forRoot({

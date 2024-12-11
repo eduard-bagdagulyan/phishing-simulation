@@ -20,7 +20,7 @@ export class PhishingService {
   async sendPhishingEmail(email: string): Promise<Attempt> {
     const attempt = new this.attemptModel({ email });
 
-    const phishingLink = `${process.env.APP_URL}/api/phishing/click/${attempt._id}`;
+    const phishingLink = `${process.env.PHISHING_SIMULATION_URL}/api/phishing/click/${attempt._id}`;
     const emailContent = `
       <p>This is a phishing simulation test.</p>
       <p>Click <a href="${phishingLink}">here</a> to test your phishing awareness.</p>

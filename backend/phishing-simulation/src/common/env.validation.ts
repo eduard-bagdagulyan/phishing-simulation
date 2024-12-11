@@ -10,12 +10,12 @@ import {
 
 class EnvironmentVariables {
   @IsString()
-  APP_URL: string;
+  PHISHING_SIMULATION_URL: string;
 
   @IsNumber()
   @Min(0)
   @Max(65535)
-  APP_PORT: number;
+  PHISHING_SIMULATION_PORT: number;
 
   @IsString()
   MAIL_HOST: string;
