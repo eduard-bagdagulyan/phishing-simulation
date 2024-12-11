@@ -1,11 +1,27 @@
 import { plainToInstance } from 'class-transformer';
-import { IsNumber, Max, Min, validateSync } from 'class-validator';
+import {
+  IsEmail,
+  IsNumber,
+  IsString,
+  Max,
+  Min,
+  validateSync,
+} from 'class-validator';
 
 class EnvironmentVariables {
   @IsNumber()
   @Min(0)
   @Max(65535)
   APP_PORT: number;
+
+  @IsString()
+  MAIL_HOST: string;
+
+  @IsEmail()
+  MAIL_USER: string;
+
+  @IsString()
+  MAIL_PASS: string;
 }
 
 export function validate(config: Record<string, unknown>) {
