@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { validate } from './common/env.validation';
 import { MailerModule } from '@nestjs-modules/mailer';
+import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { MailerModule } from '@nestjs-modules/mailer';
         from: '"Phishing Simulator" <no-reply@phishing-simulator.com>',
       },
     }),
+    MongooseModule.forRoot(process.env.MONGO_URI),
   ],
 })
 export class AppModule {}
