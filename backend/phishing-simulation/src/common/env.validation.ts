@@ -9,6 +9,9 @@ import {
 } from 'class-validator';
 
 class EnvironmentVariables {
+  @IsString()
+  APP_URL: string;
+
   @IsNumber()
   @Min(0)
   @Max(65535)
