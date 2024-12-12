@@ -6,6 +6,7 @@ import { AuthModule } from './auth/auth.module';
 import { APP_GUARD } from '@nestjs/core';
 import { AuthGuard } from './auth/auth.guard';
 import { JwtService } from '@nestjs/jwt';
+import { AttemptsModule } from './attempts/attempts.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { JwtService } from '@nestjs/jwt';
     }),
     MongooseModule.forRoot(process.env.MONGO_URI),
     AuthModule,
+    AttemptsModule,
   ],
   providers: [
     JwtService,
